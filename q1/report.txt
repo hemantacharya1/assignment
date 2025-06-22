@@ -1,0 +1,62 @@
+Tokenisation Report
+Sentence:
+The cat sat on the mat because it was tired.
+
+1. BPE (GPT-2)
+Tokens: ['The', 'Ġcat', 'Ġsat', 'Ġon', 'Ġthe', 'Ġmat', 'Ġbecause', 'Ġit', 'Ġwas', 'Ġtired', '.']
+
+Token IDs: [464, 1363, 7641, 319, 464, 7872, 626, 340, 373, 13626, 13]
+
+Total Tokens: 11
+
+2. WordPiece (BERT)
+Tokens: ['the', 'cat', 'sat', 'on', 'the', 'mat', 'because', 'it', 'was', 'tired', '.']
+
+Token IDs: [1996, 4937, 2938, 2006, 1996, 8819, 2138, 2009, 2001, tired → tired , 1012]
+
+Total Tokens: 11
+
+3. SentencePiece (T5)
+Tokens: ['▁The', '▁cat', '▁sat', '▁on', '▁the', '▁mat', '▁because', '▁it', '▁was', '▁tired', '.']
+
+Token IDs: [94, 6203, 764, 276, 8, 3473, 1446, 41, 21, 3731, 5]
+
+Total Tokens: 11
+
+📝 Why the splits differ:
+Different tokenizers use different vocabulary and algorithms:
+
+BPE merges frequent subwords (e.g., ti, red → tired)
+
+WordPiece adds ## for subword joins (##ing, ##ly)
+
+SentencePiece treats space as a token (e.g., ▁The)
+
+Each model has its own "vocabulary dictionary", affecting how it chunks words.
+
+🧠 Fill-in-the-Blank Predictions (BERT)
+Original sentence:
+The cat sat on the [MASK] because it was [MASK].
+
+🔹 First [MASK]:
+floor (0.2534)
+
+couch (0.0875)
+
+bed (0.0874)
+
+🔹 Second [MASK]:
+cold (0.0537)
+
+hungry (0.0453)
+
+warm (0.0316)
+
+📝 Plausibility Notes:
+BERT’s predictions are contextually strong:
+
+For "sat on the", options like floor, bed, couch are realistic.
+
+For "because it was", words like cold, hungry, warm fit a cat’s state.
+
+The model reflects real-world language usage it learned from training on Wikipedia and books.
