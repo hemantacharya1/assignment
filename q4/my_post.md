@@ -50,7 +50,7 @@ This repository contains solutions and deliverables for a series of tasks relate
   - Loss decreased steadily, showing improved confidence in predictions.  
   - Accuracy was consistently high, indicating good separation of classes.  
 - **Graphs:**  
-  ![Loss and Accuracy Graph](./q3_loss_accuracy_screenshot.png)  
+  ![Loss and Accuracy Graph](q3_loss_accuracy_screenshot.png)  
   *(Replace with your actual screenshot file path)*
 
 ---
