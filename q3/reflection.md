@@ -1,0 +1,7 @@
+# Reflection on Logistic Regression Perceptron Training
+
+At the beginning of training, the model's predictions were essentially random with higher loss values, indicating uncertainty and inaccuracy. However, despite the accuracy being high initially, the model lacked confidence, which is reflected in the relatively higher loss. As training progressed, the model quickly learned to distinguish apples from bananas based on the input features, achieving perfect accuracy by epoch 0 and improving its confidence until stopping early at epoch 79 with very low loss.
+
+The learning rate plays a crucial role in the convergence of the model. A learning rate that is too high can cause the model to overshoot the optimal solution, leading to unstable training or failure to converge. Conversely, a very low learning rate slows down training, requiring more epochs to reach acceptable performance. In this project, a moderate learning rate of 0.1 allowed the model to converge quickly and stably.
+
+The DJ-knob analogy aptly illustrates the learning rate's impact on training. Just as a DJ adjusts the knob to control the tempo or intensity of music, tuning the learning rate controls how quickly or cautiously the model learns from data. Similar to how a child learns best through gradual adjustments and feedback, a properly set learning rate helps the model make steady improvements without "overreacting" to new information.
